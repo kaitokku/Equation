@@ -37,7 +37,11 @@
 
 - (double)real1
 {
-    if([self isReal]) {
+    //一次式ならば解の方程式を用いない
+    if(a==0){
+        return (-[self FirstExpression]);
+    }
+    else if([self isReal]) {
         return (-b + sqrt([self discriminant]))/(2*a);
     }
     return (-b)/(2*a);
@@ -45,7 +49,11 @@
 
 - (double)real2
 {
-    if([self isReal]) {
+    //一次式ならば解の方程式を用いない
+    if(a==0){
+        return (-[self FirstExpression]);
+    }
+    else if([self isReal]) {
         return (-b - sqrt([self discriminant]))/(2*a);
     }
     return (-b)/(2*a);
@@ -54,7 +62,8 @@
 
 - (double)imaginary1
 {
-    if([self isReal]) {
+    //一次式の場合も0を返す
+    if(a==0 || [self isReal]) {
         return 0;
     }
     return (sqrt(-[self discriminant]))/(2*a);
@@ -62,10 +71,16 @@
 
 - (double)imaginary2
 {
-    if([self isReal]) {
+    //一次式の場合も0を返す
+    if(a==0 || [self isReal]) {
         return 0;
     }
     return -(sqrt(-[self discriminant]))/(2*a);
+}
+
+//式が１次式ならば他のスレッドの代わりに実数解を返す
+- (double)FirstExpression{
+    return c/b;
 }
 
 @end

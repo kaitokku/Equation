@@ -168,4 +168,24 @@ Equation* e;
     STAssertEqualsWithAccuracy(-3.0*sqrt(3.0)/7.0, [e imaginary2], 0.00001, @"imaginary2 error");
 }
 
+/* OOP-006 課題2　以上 */
+
+
+/* OOP-006 課題3　以下 */
+
+// 7x - 14 = 0をテスト
+// 一次式の場合
+- (void)test63
+{
+    e = [[Equation alloc] initWithA:0 b:7 c:-14];
+    
+    STAssertEqualsWithAccuracy(2.0, [e real1], 0.00001, @"real1 error");
+    STAssertEqualsWithAccuracy(2.0, [e real2], 0.00001, @"real2 error");
+    STAssertEqualsWithAccuracy(0.0, [e imaginary1], 0.00001, @"imaginary1 error");
+    STAssertEqualsWithAccuracy(0.0, [e imaginary2], 0.00001, @"imaginary2 error");
+}
+
+/* OOP-006 課題3　以上 */
+
+
 @end

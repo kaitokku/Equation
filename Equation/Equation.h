@@ -26,4 +26,7 @@
 -(double)imaginary1;
 -(double)imaginary2;
 
+//一次式を解くスレッド
+-(double)FirstExpression;
+
 @end

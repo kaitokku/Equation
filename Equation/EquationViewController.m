@@ -67,7 +67,7 @@
 {
     [super viewDidLoad];
     
-    a = 1;
+    a = 0;
     b = -8;
     c = 5;
     
