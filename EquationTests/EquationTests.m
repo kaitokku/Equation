@@ -175,12 +175,25 @@ Equation* e;
 
 // 7x - 14 = 0をテスト
 // 一次式の場合
-- (void)test63
+- (void)test631
 {
     e = [[Equation alloc] initWithA:0 b:5 c:-10];
     
     STAssertEqualsWithAccuracy(2.0, [e real1], 0.00001, @"real1 error");
     STAssertEqualsWithAccuracy(2.0, [e real2], 0.00001, @"real2 error");
+    STAssertEqualsWithAccuracy(0.0, [e imaginary1], 0.00001, @"imaginary1 error");
+    STAssertEqualsWithAccuracy(0.0, [e imaginary2], 0.00001, @"imaginary2 error");
+}
+
+// 9 = 0をテスト
+// 0次式の場合
+
+- (void)test632
+{
+    e = [[Equation alloc] initWithA:0 b:0 c:9];
+    
+    STAssertEqualsWithAccuracy(NAN, [e real1], 0.00001, @"real1 error");
+    STAssertEqualsWithAccuracy(NAN, [e real2], 0.00001, @"real2 error");
     STAssertEqualsWithAccuracy(0.0, [e imaginary1], 0.00001, @"imaginary1 error");
     STAssertEqualsWithAccuracy(0.0, [e imaginary2], 0.00001, @"imaginary2 error");
 }

@@ -39,7 +39,7 @@
 {
     //一次式ならば解の方程式を用いない
     if(a==0){
-        return (-[self FirstExpression]);
+        return [self FirstExpression];
     }
     else if([self isReal]) {
         return (-b + sqrt([self discriminant]))/(2*a);
@@ -51,7 +51,7 @@
 {
     //一次式ならば解の方程式を用いない
     if(a==0){
-        return (-[self FirstExpression]);
+        return [self FirstExpression];
     }
     else if([self isReal]) {
         return (-b - sqrt([self discriminant]))/(2*a);
@@ -80,7 +80,10 @@
 
 //式が１次式ならば他のスレッドの代わりに実数解を返す
 - (double)FirstExpression{
-    return c/b;
+    if(b==0){
+        return NAN; //0次式の場合はNANを返す
+    }
+    return -c/b;
 }
 
 @end
