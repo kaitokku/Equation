@@ -177,7 +177,7 @@ Equation* e;
 // 一次式の場合
 - (void)test63
 {
-    e = [[Equation alloc] initWithA:0 b:7 c:-14];
+    e = [[Equation alloc] initWithA:0 b:5 c:-10];
     
     STAssertEqualsWithAccuracy(2.0, [e real1], 0.00001, @"real1 error");
     STAssertEqualsWithAccuracy(2.0, [e real2], 0.00001, @"real2 error");
